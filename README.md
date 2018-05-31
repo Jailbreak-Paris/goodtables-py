@@ -1,5 +1,15 @@
 # goodtables-py
 
+# Jailbreak branch
+
+Install optional dependencies:
+
+```sh
+pip install -e .[qualidata]
+```
+
+---
+
 [![Travis](https://img.shields.io/travis/frictionlessdata/goodtables-py/master.svg)](https://travis-ci.org/frictionlessdata/goodtables-py)
 [![Coveralls](http://img.shields.io/coveralls/frictionlessdata/goodtables-py.svg?branch=master)](https://coveralls.io/r/frictionlessdata/goodtables-py?branch=master)
 [![PyPi](https://img.shields.io/pypi/v/goodtables.svg)](https://pypi.python.org/pypi/goodtables)
