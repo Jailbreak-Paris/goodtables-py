@@ -100,7 +100,7 @@ def validate(paths, json, **options):
     schema = options.pop('schema', None)
     if schema:
         # Check validity of the json-schema provided
-        assert os.path.exists(schema)
+        assert os.path.exists(schema), FileNotFoundError("File {} doesn't exits".format(schema))
         with open(schema, 'r') as _f:
             json_module.loads(_f.read())
 
