@@ -3,6 +3,23 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
+"""
+    Year Interval Value check
+
+    Vérifie que l'on a bien une valeur du type "aaaa/aaaa" avec la première année
+    inférieure à la seconde.
+
+    Messages d'erreur attendus :
+    - Si la valeur n'est pas du type ^\d{4}/\d{4}$ (ex : "toto")
+      - La valeur "toto" n'a pas le format attendu pour une période (AAAA/AAAA).
+    - Si les deux années sont identiques (ex : "2017/2017")
+      - Période "2017/2017 invalide. Les deux années doivent être différentes).
+    - Si la deuxième année est inférieure à la première (ex : "2017/2012")
+      - Période "2017/2012" invalide. La deuxième année doit être postérieure à la première (2012/2017).
+
+    Pierre Dittgen, Jailbreak
+"""
+
 
 import re
 from simpleeval import simple_eval
@@ -16,7 +33,9 @@ YEAR_INTERVAL_RE = re.compile('^(\\d{4})/(\\d{4})$')
 
 @check('year-interval-value', type='custom', context='body')
 class YearIntervalValue(object):
-
+    """
+        Year Interval Value check class
+    """
     # Public
 
     def __init__(self, column, **options):
