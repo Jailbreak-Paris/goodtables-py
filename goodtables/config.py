@@ -49,4 +49,5 @@ CHECKS = [
     'goodtables.contrib.checks.custom_constraint',
     'goodtables.contrib.checks.french_siret_value',
     'goodtables.contrib.checks.year_interval_value',
+    'goodtables.contrib.checks.cohesive_columns_value',
 ]
