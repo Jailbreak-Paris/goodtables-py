@@ -55,6 +55,11 @@ class YearIntervalValue(object):
 
         # Check value
         value = cell.get('value')
+
+        # Don't warn on empty values
+        if value == '':
+            return
+
         rm = YEAR_INTERVAL_RE.match(value)
         if not rm:
             return self.err(cell,
