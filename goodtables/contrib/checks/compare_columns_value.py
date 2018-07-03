@@ -14,6 +14,10 @@ from __future__ import unicode_literals
     - inférieure (<)
     à la valeur de la deuxième colonne
 
+    Si les deux valeurs sont numériques, c'est une comparaison numérique qui est utilisée.
+    Si les deux valeurs ne sont pas numériques, c'est une comparaison lexicographique qui est utilisée.
+    Si une valeur est numérique et l'autre lexicographique, une erreur est relevée.
+
     Paramètres :
     - column : le nom de la première colonne
     - column2 : le nom de la deuxième colonne
@@ -21,6 +25,8 @@ from __future__ import unicode_literals
 
     Messages d'erreur attendus :
     - Opérateur [??] invalide
+    - La valeur de la colonne {col1} [{val1}] n'est pas comparable avec la valeur de la colonne {col2} [{val2}]
+    - La valeur de la colonne {col1} [{val1}] devrait être {opérateur} à la valeur de la colonne {col2} [{val2}]
 
     Pierre Dittgen, Jailbreak
 """
