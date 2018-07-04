@@ -10,7 +10,7 @@ from __future__ import unicode_literals
     inférieure à la seconde.
 
     Messages d'erreur attendus :
-    - Si la valeur n'est pas du type ^\d{4}/\d{4}$ (ex : "toto")
+    - Si la valeur n'est pas du type ^\\d{4}/\\d{4}$ (ex : "toto")
       - La valeur "toto" n'a pas le format attendu pour une période (AAAA/AAAA).
     - Si les deux années sont identiques (ex : "2017/2017")
       - Période "2017/2017 invalide. Les deux années doivent être différentes).
