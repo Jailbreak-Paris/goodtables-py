@@ -31,7 +31,6 @@ from __future__ import unicode_literals
     Pierre Dittgen, Jailbreak
 """
 
-import re
 from simpleeval import simple_eval
 from ...registry import check
 from ...error import Error
