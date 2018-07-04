@@ -51,4 +51,5 @@ CHECKS = [
     'goodtables.contrib.checks.year_interval_value',
     'goodtables.contrib.checks.cohesive_columns_value',
     'goodtables.contrib.checks.compare_columns_value',
+    'goodtables.contrib.checks.sum_columns_value',
 ]
