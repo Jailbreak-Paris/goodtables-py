@@ -82,3 +82,6 @@ target/
 tabulator
 jsontableschema
 datapackage
+
+# VSCode
+.vscode

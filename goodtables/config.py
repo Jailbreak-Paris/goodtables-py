@@ -52,4 +52,5 @@ CHECKS = [
     'goodtables.contrib.checks.cohesive_columns_value',
     'goodtables.contrib.checks.compare_columns_value',
     'goodtables.contrib.checks.sum_columns_value',
+    'goodtables.contrib.checks.nomenclature_actes_value',
 ]
