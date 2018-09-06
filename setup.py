@@ -38,7 +38,7 @@ INSTALL_FORMAT_ODS_REQUIRES = [
 TESTS_REQUIRE = [
     'tox',
 ]
-QUALIDATA_REQUIRES = [
+VALIDATA_REQUIRES = [
     'python-stdnum == 1.9',
 ]
 README = read('README.md')
@@ -57,7 +57,7 @@ setup(
     extras_require={
         'develop': TESTS_REQUIRE,
         'ods': INSTALL_FORMAT_ODS_REQUIRES,
-        'qualidata': QUALIDATA_REQUIRES,
+        'validata': VALIDATA_REQUIRES,
     },
     entry_points={
         'console_scripts': [

@@ -5,7 +5,7 @@
 Install optional dependencies:
 
 ```sh
-pip install -e .[qualidata]
+pip install -e .[validata]
 ```
 
 ---
