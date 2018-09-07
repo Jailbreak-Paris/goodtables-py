@@ -24,6 +24,9 @@ class FrenchSiretValue(object):
         # Get cell
         cell = None
         for item in cells:
+            if 'header' not in item:
+                # Skip columns without headers. This can occur in particular with formatted Excel files.
+                continue
             if self.__column in [item['column-number'], item['header']]:
                 cell = item
                 break
