@@ -41,10 +41,10 @@ CHECKS = [
     'goodtables.checks.maximum_constraint',
     'goodtables.checks.minimum_length_constraint',
     'goodtables.checks.maximum_length_constraint',
+    # Contrib
+    'goodtables.contrib.checks.blacklisted_value',
+    'goodtables.contrib.checks.deviated_value',
+    'goodtables.contrib.checks.sequential_value',
+    'goodtables.contrib.checks.truncated_value',
+    'goodtables.contrib.checks.custom_constraint',
 ]
-
-# Dynamically append contrib checks list
-checks_dir = os.path.join(os.path.dirname(__file__), 'contrib', 'checks')
-for name in (f[:-3] for f in os.listdir(checks_dir) if f.endswith('.py')):
-    if name != '__init__':
-        CHECKS.append('goodtables.contrib.checks.{}'.format(name))

@@ -17,8 +17,8 @@ from .error import Error
 from . import exceptions
 from . import config
 
-
 # Module API
+
 
 class Inspector(object):
 
@@ -43,7 +43,7 @@ class Inspector(object):
         self.__infer_fields = infer_fields
         self.__order_fields = order_fields
 
-        parse_limit = lambda num: float('inf') if (num < 0) else num  # noqa:E731
+        def parse_limit(num): return float('inf') if (num < 0) else num  # noqa:E731
         self.__error_limit = parse_limit(error_limit)
         self.__table_limit = parse_limit(table_limit)
         self.__row_limit = parse_limit(row_limit)

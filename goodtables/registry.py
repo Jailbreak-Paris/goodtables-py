@@ -8,7 +8,6 @@ import six
 import warnings
 from copy import deepcopy
 from collections import OrderedDict
-from .spec import spec
 from . import exceptions
 
 
@@ -50,6 +49,8 @@ class Registry(object):
         return deepcopy(self.__presets)
 
     def register_check(self, func, name, type=None, context=None, position=None):
+        from .spec import spec
+
         check = {
             'func': func,
             'name': name,
@@ -93,6 +94,8 @@ class Registry(object):
         self.__checks = checks
 
     def compile_checks(self, include, exclude, **options):
+        from .spec import spec
+
         include = deepcopy(include)
         exclude = deepcopy(exclude)
 

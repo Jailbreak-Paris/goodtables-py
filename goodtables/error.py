@@ -5,7 +5,6 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 import functools
-from .spec import spec
 
 
 @functools.total_ordering
@@ -33,6 +32,8 @@ class Error(object):
         message=None,
         message_substitutions=None
     ):
+        from .spec import spec
+
         self._spec = spec['errors'].get(code)
         default_message = None
         if self._spec:
