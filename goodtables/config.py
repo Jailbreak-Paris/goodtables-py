@@ -3,7 +3,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
-
+import os
 
 # General
 
@@ -41,16 +41,10 @@ CHECKS = [
     'goodtables.checks.maximum_constraint',
     'goodtables.checks.minimum_length_constraint',
     'goodtables.checks.maximum_length_constraint',
-    # Contrib
-    'goodtables.contrib.checks.blacklisted_value',
-    'goodtables.contrib.checks.deviated_value',
-    'goodtables.contrib.checks.sequential_value',
-    'goodtables.contrib.checks.truncated_value',
-    'goodtables.contrib.checks.custom_constraint',
-    'goodtables.contrib.checks.french_siret_value',
-    'goodtables.contrib.checks.year_interval_value',
-    'goodtables.contrib.checks.cohesive_columns_value',
-    'goodtables.contrib.checks.compare_columns_value',
-    'goodtables.contrib.checks.sum_columns_value',
-    'goodtables.contrib.checks.nomenclature_actes_value',
 ]
+
+# Dynamically append contrib checks list
+checks_dir = os.path.join(os.path.dirname(__file__), 'contrib', 'checks')
+for name in (f[:-3] for f in os.listdir(checks_dir) if f.endswith('.py')):
+    if name != '__init__':
+        CHECKS.append('goodtables.contrib.checks.{}'.format(name))
